@@ -1,3 +1,65 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://haodq4.github.io/"  # Thay bằng domain của bạn
+languageCode = "en-us"
+title = "My Awesome Blog"
+theme = "PaperMod"
+paginate = 10
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+canonifyURLs = true
+
+[params]
+  env = "production" # or "development"
+  description = "A personal blog powered by Hugo and PaperMod"
+  author = "Your Name"
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowShareButtons = true
+  defaultTheme = "auto" # light, dark, auto
+
+  [params.assets]
+    disableFingerprinting = true
+
+  [params.homeInfoParams]
+    Title = "Chào bạn 👋"
+    Content = "Chào mừng bạn đến với blog cá nhân của tôi!"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/yourusername"
+
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com/yourhandle"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true  # Cho phép render HTML thô trong markdown
+
