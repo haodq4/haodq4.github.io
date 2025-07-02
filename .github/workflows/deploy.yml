@@ -4,12 +4,15 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write  # cần để push lên gh-pages
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: Checkout source code
       uses: actions/checkout@v3
       with:
         submodules: true
@@ -21,12 +24,12 @@ jobs:
         hugo-version: 'latest'
         extended: true
 
-    - name: Build
+    - name: Build the site
       run: hugo --minify
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: \${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
         publish_branch: gh-pages
