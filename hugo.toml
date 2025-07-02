@@ -1,7 +1,8 @@
-baseURL = "https://haodq4.github.io/"  # Thay bằng domain của bạn
+baseURL = "https://haodq4.github.io/"
 languageCode = "en-us"
-title = "My Awesome Blog"
+title = "Coding & Life"
 theme = "PaperMod"
+
 [pagination]
   pagerSize = 10
 
@@ -12,34 +13,48 @@ buildExpired = false
 canonifyURLs = true
 
 [params]
-  env = "production" # or "development"
-  description = "A personal blog powered by Hugo and PaperMod"
-  author = "Your Name"
+  env = "production"
+  description = "A personal blog where I share programming knowledge and life experiences"
+  author = "Hao DQ"
   ShowReadingTime = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowWordCount = true
   ShowShareButtons = true
-  defaultTheme = "auto" # light, dark, auto
+  defaultTheme = "auto"
+
+  [params.profileMode]
+    enabled = true
+    title = "Hi, I'm Duong Quoc Hao 👋"
+    subtitle = """I'm a software developer passionate about technology.
+
+Welcome to my personal blog — a place where I share programming knowledge and life experiences.
+
+I hope you'll find something helpful and inspiring here!
+"""
+    imageUrl = "images/avatar.png"
+    imageTitle = "Hao's avatar"
+    imageWidth = 120
+    imageHeight = 120
+
+    buttons = [
+      { name = "Posts", url = "/posts/" },
+      { name = "About", url = "/about/" }
+    ]
 
   [params.assets]
     disableFingerprinting = true
 
-  [params.homeInfoParams]
-    Title = "Chào bạn 👋"
-    Content = "Chào mừng bạn đến với blog cá nhân của tôi!"
-
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/yourusername"
+    url = "https://github.com/haodq4"
 
   [[params.socialIcons]]
     name = "twitter"
     url = "https://twitter.com/yourhandle"
 
 [menu]
-
   [[menu.main]]
     identifier = "home"
     name = "Home"
@@ -61,6 +76,6 @@ canonifyURLs = true
 [markup]
   [markup.highlight]
     noClasses = false
-  [markup.goldmark.renderer]
-    unsafe = true  # Cho phép render HTML thô trong markdown
 
+  [markup.goldmark.renderer]
+    unsafe = true
