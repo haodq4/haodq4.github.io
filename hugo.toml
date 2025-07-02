@@ -2,7 +2,8 @@ baseURL = "https://haodq4.github.io/"  # Thay bằng domain của bạn
 languageCode = "en-us"
 title = "My Awesome Blog"
 theme = "PaperMod"
-paginate = 10
+[pagination]
+  pagerSize = 10
 
 enableRobotsTXT = true
 buildDrafts = false
