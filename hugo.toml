@@ -6,7 +6,9 @@ theme = "PaperMod"
 [pagination]
   pagerSize = 10
 
-googleAnalytics = "G-TGHCE00QZV"
+[services]
+  [services.googleAnalytics]
+    ID = 'G-J9LLJP70WK'
 
 enableRobotsTXT = true
 buildDrafts = false
