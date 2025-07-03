@@ -6,6 +6,10 @@ theme = "PaperMod"
 [pagination]
   pagerSize = 10
 
+[params.analytics.google]
+  SiteVerificationTag = ""
+  MeasurementID = "G-TGHCE00QZV"
+
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
