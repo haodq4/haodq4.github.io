@@ -1,5 +1,5 @@
 ---
-title: "Vì sao tôi viết blog dù chưa (thật sự) giỏi lập trình"
+title: "Vì sao tôi viết blog dù chưa giỏi lập trình"
 date: 2025-07-02
 draft: false
 tags: ["blog cá nhân", "dev", "tư duy lập trình"]
