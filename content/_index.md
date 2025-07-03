@@ -1,4 +1,4 @@
 ---
-title: "Trang chủ"
+title: "Home"
 layout: "home"
 ---

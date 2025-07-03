@@ -15,7 +15,7 @@ canonifyURLs = true
 [params]
   env = "production"
   description = "A personal blog where I share programming knowledge and life experiences"
-  author = "Hao DQ"
+  author = "Duong Quoc Hao"
   ShowReadingTime = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
@@ -49,10 +49,6 @@ I hope you'll find something helpful and inspiring here!
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/haodq4"
-
-  [[params.socialIcons]]
-    name = "twitter"
-    url = "https://twitter.com/yourhandle"
 
 [menu]
   [[menu.main]]
