@@ -63,3 +63,31 @@ The app server handles web requests and business logic, while the database runs 
 - Need basic monitoring/logging for two servers
 
 This split is a foundational move. Most real-world systems start scaling by moving the database out first, before touching anything else.
+
+## 3. Add More App Servers Behind a Load Balancer
+
+As traffic grows, a single app server won't be enough.
+
+You scale horizontally by adding more app servers, and placing a load balancer in front of them:
+
+<p align="center">
+  <img src="/images/post2/3-load-balancer.png" alt="Load Balancer Diagram" width="300" />
+</p>
+
+The load balancer acts as a smart router. It distributes incoming traffic across available app servers to keep things running smoothly.
+
+- If **App Server 1 gets overloaded**, traffic is redirected to **App Server 2** or others.
+- If a server **goes offline**, the load balancer automatically reroutes traffic to healthy ones.
+- This helps the system stay available even under high load or partial failure.
+
+### Pros:
+- Handles higher traffic volumes
+- No downtime if one app server fails
+- Easy to scale app servers up or down
+
+### Cons:
+- App servers must be **stateless** (no session stored locally)
+- Load balancer adds some infrastructure complexity
+- Shared state (like sessions) may require Redis or JWT
+
+This setup is a major step toward making your system scalable and resilient — and it’s how most production systems operate today.
