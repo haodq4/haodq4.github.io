@@ -22,7 +22,7 @@ The backend app, web server, database, and static files — everything lives tog
 It's simple, easy to deploy, and good enough for testing features or demo purposes.
 
 <p align="center">
-  <img src="/images/post2/single-server.png" alt="Single Server Diagram" width="300" />
+  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
 </p>
 
 
@@ -38,3 +38,28 @@ It's simple, easy to deploy, and good enough for testing features or demo purpos
 
 A single server is fine while the system is small.  
 But once traffic increases — or you need better performance and reliability — you'll need to start breaking things apart.
+
+
+## 2. Split Backend and Database
+
+When traffic starts to grow, the first bottleneck often comes from the database.
+
+Instead of running everything on one machine, you can separate the backend application and the database into different servers:
+
+<p align="center">
+  <img src="/images/post2/2-split-backend-database.png" alt="Split Backend and Database Diagram" width="300" />
+</p>
+
+The app server handles web requests and business logic, while the database runs on its own machine, optimized for storage and queries.
+
+### Pros:
+- Reduces resource contention between app and DB
+- Easier to scale backend or database separately
+- Clearer architecture separation
+
+### Cons:
+- Slightly more complex setup
+- Network latency between app and DB
+- Need basic monitoring/logging for two servers
+
+This split is a foundational move. Most real-world systems start scaling by moving the database out first, before touching anything else.
