@@ -21,12 +21,12 @@ In the early stage, the entire system often runs on a single machine.
 The backend app, web server, database, and static files — everything lives together.  
 It's simple, easy to deploy, and good enough for testing features or demo purposes.
 
-### ✅ Pros:
+### Pros:
 - Quick to set up and get running  
 - No infrastructure management needed  
 - No need to split anything yet  
 
-### ❌ Cons:
+### Cons:
 - Hard to scale when traffic grows  
 - One failure can bring down the whole system  
 - Not ideal if you need to scale components independently  
