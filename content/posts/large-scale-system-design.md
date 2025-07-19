@@ -22,6 +22,7 @@ The backend app, web server, database, and static files — everything lives tog
 It's simple, easy to deploy, and good enough for testing features or demo purposes.
 
 ![Single server diagram](/images/post2/single-server.png)
+![Test](/images/post2/single-server.png)
 
 ### Pros:
 - Quick to set up and get running  
