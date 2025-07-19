@@ -22,7 +22,7 @@ The backend app, web server, database, and static files — everything lives tog
 It's simple, easy to deploy, and good enough for testing features or demo purposes.
 
 <p align="center">
-  <img src="/images/post2/single-server.png" alt="Single Server Diagram" width="500" />
+  <img src="/images/post2/single-server.png" alt="Single Server Diagram" width="300" />
 </p>
 
 
@@ -38,4 +38,3 @@ It's simple, easy to deploy, and good enough for testing features or demo purpos
 
 A single server is fine while the system is small.  
 But once traffic increases — or you need better performance and reliability — you'll need to start breaking things apart.
-
