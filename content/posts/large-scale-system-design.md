@@ -47,7 +47,7 @@ When traffic starts to grow, the first bottleneck often comes from the database.
 Instead of running everything on one machine, you can separate the backend application and the database into different servers:
 
 <p align="center">
-  <img src="/images/post2/2-split-backend-database.png" alt="Split Backend and Database Diagram" width="300" />
+  <img src="/images/post2/2-split-backend-database.png" alt="Split Backend and Database Diagram" width="430" />
 </p>
 
 The app server handles web requests and business logic, while the database runs on its own machine, optimized for storage and queries.
