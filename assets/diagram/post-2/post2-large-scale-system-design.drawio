@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="27.0.6" pages="3">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="28.0.6" pages="4">
   <diagram name="1. Start with a Single Server" id="Byfpu32tcaHuElu8PYMd">
     <mxGraphModel dx="931" dy="521" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -143,6 +143,72 @@
         </mxCell>
         <mxCell id="Xu6_-6TNGvXPaSgneKkQ-6" value="Database" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database.svg;" vertex="1" parent="Rjtdj7C3v9ikiG6U7p3l-1">
           <mxGeometry x="286.43" y="650" width="67.14" height="49.69" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="HiKV_VAosZLyXKmyOja-" name="4.caching">
+    <mxGraphModel dx="898" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SZeHiB5ru7YyanhRrgAM-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_uF9qZDJD15JBtBrTLWE-1" target="_uF9qZDJD15JBtBrTLWE-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SZeHiB5ru7YyanhRrgAM-5" value="1.Check cache" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SZeHiB5ru7YyanhRrgAM-2">
+          <mxGeometry x="-0.012" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_uF9qZDJD15JBtBrTLWE-1" value="Web server" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.web_server;" vertex="1" parent="1">
+          <mxGeometry x="70" y="220" width="51" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SZeHiB5ru7YyanhRrgAM-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_uF9qZDJD15JBtBrTLWE-2" target="SZeHiB5ru7YyanhRrgAM-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SZeHiB5ru7YyanhRrgAM-11" value="2. Cache miss, &lt;br&gt;read DB" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SZeHiB5ru7YyanhRrgAM-3">
+          <mxGeometry x="-0.194" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SZeHiB5ru7YyanhRrgAM-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="220.79999999999995" as="sourcePoint" />
+            <mxPoint x="130" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SZeHiB5ru7YyanhRrgAM-8" value="1.1. Cache hit,&lt;br&gt;return data cache" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SZeHiB5ru7YyanhRrgAM-7">
+          <mxGeometry x="0.1754" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SZeHiB5ru7YyanhRrgAM-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="272.63999999999993" as="sourcePoint" />
+            <mxPoint x="130" y="272" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SZeHiB5ru7YyanhRrgAM-15" value="2.2. Return data DB" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SZeHiB5ru7YyanhRrgAM-14">
+          <mxGeometry x="0.1221" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_uF9qZDJD15JBtBrTLWE-2" value="Caching" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Cache_Redis_Product.svg;" vertex="1" parent="1">
+          <mxGeometry x="300" y="229.84" width="50" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="SZeHiB5ru7YyanhRrgAM-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="276" as="sourcePoint" />
+            <mxPoint x="350" y="275.59" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SZeHiB5ru7YyanhRrgAM-13" value="2.1. Save to cache" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SZeHiB5ru7YyanhRrgAM-12">
+          <mxGeometry x="0.201" y="-1" relative="1" as="geometry">
+            <mxPoint x="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SZeHiB5ru7YyanhRrgAM-1" value="Database" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database.svg;" vertex="1" parent="1">
+          <mxGeometry x="520" y="225.16" width="67.14" height="49.69" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

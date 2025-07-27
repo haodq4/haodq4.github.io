@@ -91,3 +91,51 @@ The load balancer acts as a smart router. It distributes incoming traffic across
 - Shared state (like sessions) may require Redis or JWT
 
 This setup is a major step toward making your system scalable and resilient — and it’s how most production systems operate today.
+
+## 4. Add Caching
+Even with multiple app servers and a dedicated database, as traffic keeps growing, the database will often become the next bottleneck.
+
+Most applications serve a lot of repeated queries – like fetching the same user profile or trending posts.
+Instead of hitting the database every time, we can cache frequently accessed data in memory.
+
+<p align="center"> 
+  <img src="/images/post2/4-caching.png" alt="Caching Diagram" width="380" /> 
+</p>
+
+A cache (like Redis or Memcached) stores key-value data in memory for fast access.
+When the app receives a request, it first checks the cache:
+
+- Cache hit: return data directly from cache (fast, cheap).
+
+- Cache miss: fetch data from database, then store it in cache for next time.
+
+### What to cache
+- Data that doesn’t change often, e.g. product details, user profiles
+
+- Results of expensive queries (aggregations, joins)
+
+- Frequently accessed lists like trending posts or top search results
+
+### What not to cache
+- Highly dynamic data that changes every second (stock prices, counters)
+
+- Data with strict consistency requirements (e.g. bank account balances)
+
+- Sensitive information that shouldn’t stay in memory
+
+### Pros:
+- Greatly reduces database load
+
+- Significantly faster response times
+
+- Cheap to scale (in-memory operations are fast)
+
+### Cons:
+- Cached data can become stale (need proper expiration)
+
+- Cache layer adds complexity (what to cache, when to invalidate)
+
+- Cache failures can lead to cache stampede if not handled carefully
+
+Caching is one of the highest ROI optimizations you can add.
+Almost every large-scale system relies heavily on caching to stay fast and cost-efficient.
