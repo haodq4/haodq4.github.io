@@ -99,7 +99,7 @@ Most applications serve a lot of repeated queries – like fetching the same use
 Instead of hitting the database every time, we can cache frequently accessed data in memory.
 
 <p align="center"> 
-  <img src="/images/post2/4-caching.png" alt="Caching Diagram" width="380" /> 
+  <img src="/images/post2/4-caching.png" alt="Caching Diagram" width="800" /> 
 </p>
 
 A cache (like Redis or Memcached) stores key-value data in memory for fast access.
