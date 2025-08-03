@@ -1,6 +1,6 @@
 ---
 title: "Lessons Learned: Fixing SSO Issues in a Multi-Node Spring Boot App"
-date: 2025-08-03
+date: 2025-08-02
 draft: false
 tags: ["spring-boot", "sso", "system-design"]
 description: "Two issues I faced while implementing SSO in a Spring Boot app running on multiple Kubernetes pods, and how I fixed them."
