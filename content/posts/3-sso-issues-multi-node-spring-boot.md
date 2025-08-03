@@ -6,6 +6,10 @@ tags: ["spring-boot", "sso", "system-design"]
 description: "Two issues I faced while implementing SSO in a Spring Boot app running on multiple Kubernetes pods, and how I fixed them."
 ---
 
+<p align="center">
+  <img src="/images/post3/sso-issue-banner.jpg" alt="Single Server Diagram" width="800" />
+</p>
+
 Last week, I was assigned to implement **SSO (Single Sign-On)** for a project called **HappyClub**.  
 The backend runs on **Java Spring Boot**, and locally everything worked just fine — smooth SSO redirect, valid tokens, no errors.
 
