@@ -25,7 +25,6 @@ It's simple, easy to deploy, and good enough for testing features or demo purpos
   <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
 </p>
 
-
 ### Pros:
 - Quick to set up and get running  
 - No infrastructure management needed  
