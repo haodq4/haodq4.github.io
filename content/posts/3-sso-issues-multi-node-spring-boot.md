@@ -79,7 +79,7 @@ public class SecurityConfig {
 }
 ```
 
-✅ **Key takeaway:**  
+**Key takeaway:**  
 Even if NTP is fixed, always configure clock skew so your app is resilient to small time drifts.
 
 ---
@@ -157,7 +157,7 @@ spring:
 - 📈 **Scalability:** It’s built for distributed setups, perfect for multi-node environments.  
 - 🔄 **Session sharing:** With Redis, sessions are immediately available to all pods.
 
-✅ **Key takeaway:**  
+**Key takeaway:**  
 If you already have a database and very low traffic, JDBC might be okay.  
 But for most cases, Redis is the better choice for sharing sessions in a scalable way.
 
