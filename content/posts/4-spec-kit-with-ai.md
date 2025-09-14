@@ -40,11 +40,11 @@ uvx --from git+https://github.com/github/spec-kit.git specify init my-todo-app -
 Kết quả là Spec Kit sinh ra một scaffold project với 4 thư mục chính: `memory/`, `scripts/`, `specs/`, `templates/`.
 
 <p align="center">
-  <img src="/images/post4/image1.png" alt="Single Server Diagram" width="300" />
+  <img src="/images/post4/image1.png" alt="Single Server Diagram" width="1000" />
 </p>
 
 <p align="center">
-  <img src="/images/post4/image2.png" alt="Single Server Diagram" width="300" />
+  <img src="/images/post4/image2.png" alt="Single Server Diagram" width="1000" />
 </p>
 
 ---
@@ -63,19 +63,18 @@ Bắt đầu bằng việc viết spec:
 /specify A simple todo app: create, update, delete, mark tasks as done. Each task has title, description, and deadline.
 ```
 
-👉 (Note: chèn ảnh minh họa bước /specify)
 <p align="center">
-  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
+  <img src="/images/post4/image3.png" alt="Single Server Diagram" width="1000" />
 </p>
 
 Tiếp đó, tôi để Gemini giúp tôi lập plan:
 ```
-/plan Frontend: React + Vite. Backend: Node.js + Express. Database: MongoDB. Auth: JWT.
+/plan Frontend: React + Vite. Backend: Java + Spring Boot. Database: PostgreSQL. Auth: JWT.
 ```
 
 👉 (Note: chèn ảnh minh họa bước /plan)
 <p align="center">
-  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
+  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="1000" />
 </p>
 
 Từ plan, tôi generate tasks:
@@ -85,7 +84,7 @@ Từ plan, tôi generate tasks:
 
 👉 (Note: chèn ảnh minh họa bước /tasks)
 <p align="center">
-  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
+  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="1000" />
 </p>
 
 Và cuối cùng, tôi yêu cầu Gemini code theo spec:
