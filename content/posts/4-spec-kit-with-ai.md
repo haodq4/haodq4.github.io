@@ -39,9 +39,12 @@ uvx --from git+https://github.com/github/spec-kit.git specify init my-todo-app -
 
 Kết quả là Spec Kit sinh ra một scaffold project với 4 thư mục chính: `memory/`, `scripts/`, `specs/`, `templates/`.
 
-👉 (Note: chèn ảnh minh họa CLI bootstrap)
 <p align="center">
-  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
+  <img src="/images/post4/image1.png" alt="Single Server Diagram" width="300" />
+</p>
+
+<p align="center">
+  <img src="/images/post4/image2.png" alt="Single Server Diagram" width="300" />
 </p>
 
 ---
