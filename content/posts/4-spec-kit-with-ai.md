@@ -72,9 +72,8 @@ Tiếp đó, tôi để Gemini giúp tôi lập plan:
 /plan Frontend: React + Vite. Backend: Java + Spring Boot. Database: PostgreSQL. Auth: JWT.
 ```
 
-👉 (Note: chèn ảnh minh họa bước /plan)
 <p align="center">
-  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="1000" />
+  <img src="/images/post4/image4.png" alt="Single Server Diagram" width="1000" />
 </p>
 
 Từ plan, tôi generate tasks:
@@ -82,20 +81,27 @@ Từ plan, tôi generate tasks:
 /tasks
 ```
 
-👉 (Note: chèn ảnh minh họa bước /tasks)
 <p align="center">
-  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="1000" />
+  <img src="/images/post4/image5.png" alt="Single Server Diagram" width="1000" />
 </p>
 
-Và cuối cùng, tôi yêu cầu Gemini code theo spec:
+
+Và cuối cùng, tôi yêu cầu Gemini code theo danh sách task vừa được tạo ra:
+
+<p align="center">
+  <img src="/images/post4/image6.png" alt="Single Server Diagram" width="1000" />
+</p>
+
+Tôi bắt đầu implement task đầu tiên `T001`
+
 ```
-Based on specs/001-todo-app/spec.md and plan.md, write the POST /tasks endpoint in Node.js + Express. 
-Requirements: validate input, save to MongoDB, return JSON, handle errors.
+Based on specs/001-a-simplem-todo/spec.md and plan.md, task.md please implememt task `T001`
 ```
 
-👉 (Note: chèn ảnh minh họa Gemini sinh code)
+Và 2 project `backend` và `frontend` nhanh chóng được tạo ta.
+
 <p align="center">
-  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
+  <img src="/images/post4/image7.png" alt="Single Server Diagram" width="1000" />
 </p>
 
 ---
@@ -128,9 +134,8 @@ Scaffold của Spec Kit trông như sau:
 - `specs/`: nơi tôi đặt đặc tả từng feature.
 - `templates/`: các file mẫu để team giữ format đồng nhất.
 
-👉 (Note: chèn ảnh minh họa folder structure)
 <p align="center">
-  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
+  <img src="/images/post4/image8.png" alt="Single Server Diagram" width="500" />
 </p>
 
 ---
