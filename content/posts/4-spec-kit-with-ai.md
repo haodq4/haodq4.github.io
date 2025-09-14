@@ -16,68 +16,72 @@ Tôi bắt đầu quan tâm đến hướng spec-first: viết đặc tả (spec
 
 Và khi kết hợp với AI (ở đây tôi chọn Gemini CLI), mọi thứ thực sự trở nên nhanh hơn rất nhiều.
 
-Chuẩn bị
+### Chuẩn bị
 
 Yêu cầu môi trường:
+- Linux / macOS (hoặc Windows + WSL2)
+- Python 3.11+
+- Git
+- `uv` hoặc `uvx`
+- Gemini CLI
 
-Linux / macOS (hoặc Windows + WSL2)
+---
 
-Python 3.11+
-
-Git
-
-uv hoặc uvx
-
-Gemini CLI
----------------------------------------------------
-
-Cài đặt
+### Cài đặt
 
 Tôi bắt đầu bằng việc cài Spec Kit:
-
+```bash
 uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME>
+```
 
 Sau đó cài Gemini CLI:
-
+```bash
+# Cài đặt
 npm install -g @google/gemini-cli
-# hoặc thử nhanh
+
+# Hoặc thử nhanh không cần cài
 npx https://github.com/google-gemini/gemini-cli
+```
 
 Cuối cùng chạy check:
-
+```bash
 specify check
+```
 
 👉 (Note: chèn ảnh minh họa bước check)
 <p align="center">
   <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
 </p>
 
+---
 
---------------------------------------
-Khởi tạo project
+### Khởi tạo project
 
 Tôi tạo một project todo app nho nhỏ để thử nghiệm:
-
+```bash
 specify init my-todo-app --ai gemini
+```
 
-Kết quả là Spec Kit sinh ra một scaffold project với 4 thư mục chính: memory/, scripts/, specs/, templates/.
+Kết quả là Spec Kit sinh ra một scaffold project với 4 thư mục chính: `memory/`, `scripts/`, `specs/`, `templates/`.
 
 👉 (Note: chèn ảnh minh họa CLI bootstrap)
 <p align="center">
   <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
 </p>
 
-----------------------------------------
+---
 
-Làm việc với Gemini
+### Làm việc với Gemini
 
 Tôi mở Gemini CLI:
-
+```bash
 gemini
+```
 
 Bắt đầu bằng việc viết spec:
-
+```
 /specify A simple todo app: create, update, delete, mark tasks as done. Each task has title, description, and deadline.
+```
 
 👉 (Note: chèn ảnh minh họa bước /specify)
 <p align="center">
@@ -85,8 +89,9 @@ Bắt đầu bằng việc viết spec:
 </p>
 
 Tiếp đó, tôi để Gemini giúp tôi lập plan:
-
+```
 /plan Frontend: React + Vite. Backend: Node.js + Express. Database: MongoDB. Auth: JWT.
+```
 
 👉 (Note: chèn ảnh minh họa bước /plan)
 <p align="center">
@@ -94,8 +99,9 @@ Tiếp đó, tôi để Gemini giúp tôi lập plan:
 </p>
 
 Từ plan, tôi generate tasks:
-
+```
 /tasks
+```
 
 👉 (Note: chèn ảnh minh họa bước /tasks)
 <p align="center">
@@ -103,24 +109,22 @@ Từ plan, tôi generate tasks:
 </p>
 
 Và cuối cùng, tôi yêu cầu Gemini code theo spec:
-
+```
 Based on specs/001-todo-app/spec.md and plan.md, write the POST /tasks endpoint in Node.js + Express. 
 Requirements: validate input, save to MongoDB, return JSON, handle errors.
+```
 
 👉 (Note: chèn ảnh minh họa Gemini sinh code)
 <p align="center">
   <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
 </p>
 
+---
 
-
-
-
-----------------------------
-Giải thích cấu trúc project
+### Giải thích cấu trúc project
 
 Scaffold của Spec Kit trông như sau:
-
+```
 ├── memory
 │    ├── constitution.md
 │    └── constitution_update_checklist.md
@@ -138,37 +142,33 @@ Scaffold của Spec Kit trông như sau:
      ├── plan-template.md
      ├── spec-template.md
      └── tasks-template.md
+```
 
-memory/: lưu các rule, assumption, constitution của project.
+- `memory/`: lưu các rule, assumption, constitution của project.
+- `scripts/`: shell script tiện ích (tạo feature, check prerequisite…).
+- `specs/`: nơi tôi đặt đặc tả từng feature.
+- `templates/`: các file mẫu để team giữ format đồng nhất.
 
-scripts/: shell script tiện ích (tạo feature, check prerequisite…).
-
-specs/: nơi tôi đặt đặc tả từng feature.
-
-templates/: các file mẫu để team giữ format đồng nhất.
-
-👉 (Note: chèn ảnh minh họa folder structure)]
+👉 (Note: chèn ảnh minh họa folder structure)
 <p align="center">
   <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
 </p>
 
+---
 
----------------------------------
-Bài học rút ra
+### Bài học rút ra
 
 Khi làm việc theo hướng spec-first:
-
-AI bám sát đặc tả, code ít sai hơn.
-
-Team có chung ngôn ngữ: spec chính là hợp đồng.
-
-Refactor hay scale dự án dễ kiểm soát.
+- AI bám sát đặc tả, code ít sai hơn.
+- Team có chung ngôn ngữ: spec chính là hợp đồng.
+- Refactor hay scale dự án dễ kiểm soát.
 
 Spec Kit chính là cầu nối giúp tôi biến ý tưởng thành code nhanh hơn, gọn hơn, mà vẫn giữ được sự kiểm soát.
 
----------------------------
-Kết
+---
 
-Sau vài ngày thử nghiệm, tôi thấy workflow specify → /specify → /plan → /tasks → code thực sự hiệu quả. Nếu bạn cũng đang dùng AI để code, hãy thử một lần spec-first với Spec Kit.
+### Kết
+
+Sau vài ngày thử nghiệm, tôi thấy workflow `specify` → `/specify` → `/plan` → `/tasks` → code thực sự hiệu quả. Nếu bạn cũng đang dùng AI để code, hãy thử một lần spec-first với Spec Kit.
 
 Có thể bạn sẽ ngạc nhiên giống tôi: code chạy nhanh hơn, ít bug hơn, và cảm giác kiểm soát cũng tốt hơn hẳn!
