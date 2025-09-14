@@ -7,7 +7,7 @@ description: "Làm sao để một dự án hoàn thành thật nhanh mà chất
 ---
 
 <p align="center">
-  <img src="/images/post3/sso-issue-banner.jpg" alt="Single Server Diagram" width="800" />
+  <img src="/images/post4/cover.jpg" alt="cover" width="800" />
 </p>
 
 Thời gian gần đây tôi làm việc rất nhiều với AI. Lúc đầu thì dùng nó như một trợ lý code — hỏi, trả lời, sinh code mẫu. Nhưng càng về sau tôi nhận ra: nếu không có một “khung” rõ ràng thì AI dễ bịa code hoặc làm mọi thứ lộn xộn.
@@ -23,43 +23,18 @@ Yêu cầu môi trường:
 - Python 3.11+
 - Git
 - `uv` hoặc `uvx`
-- Gemini CLI
+- Gemini CLI (cài bằng `npm install -g @google/gemini-cli`)
 
 ---
 
-### Cài đặt
+### Khởi tạo Project với Spec Kit
 
-Tôi bắt đầu bằng việc cài Spec Kit:
+Theo tài liệu chính thức, bạn chỉ cần một lệnh duy nhất để vừa cài đặt Spec Kit, vừa khởi tạo project mới. Lệnh này sử dụng `uvx` để chạy tool trực tiếp từ repository trên GitHub.
+
+Để tạo một project mới tên là `my-todo-app` và cấu hình sẵn cho Gemini, bạn chạy lệnh sau:
+
 ```bash
-uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME>
-```
-
-Sau đó cài Gemini CLI:
-```bash
-# Cài đặt
-npm install -g @google/gemini-cli
-
-# Hoặc thử nhanh không cần cài
-npx https://github.com/google-gemini/gemini-cli
-```
-
-Cuối cùng chạy check:
-```bash
-specify check
-```
-
-👉 (Note: chèn ảnh minh họa bước check)
-<p align="center">
-  <img src="/images/post2/1-single-server.png" alt="Single Server Diagram" width="300" />
-</p>
-
----
-
-### Khởi tạo project
-
-Tôi tạo một project todo app nho nhỏ để thử nghiệm:
-```bash
-specify init my-todo-app --ai gemini
+uvx --from git+https://github.com/github/spec-kit.git specify init my-todo-app --ai gemini
 ```
 
 Kết quả là Spec Kit sinh ra một scaffold project với 4 thư mục chính: `memory/`, `scripts/`, `specs/`, `templates/`.
@@ -73,8 +48,10 @@ Kết quả là Spec Kit sinh ra một scaffold project với 4 thư mục chín
 
 ### Làm việc với Gemini
 
-Tôi mở Gemini CLI:
+Sau khi khởi tạo project, bạn di chuyển vào thư mục `my-todo-app` và bắt đầu làm việc với Gemini CLI:
+
 ```bash
+cd my-todo-app
 gemini
 ```
 
